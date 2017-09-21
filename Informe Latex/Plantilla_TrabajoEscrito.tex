@@ -34,7 +34,6 @@
 \setlength{\headheight}{13.1pt}
 
 
-
 % Portada
 \title{
     \textbf{Laboratorio N.1}\
@@ -42,7 +41,7 @@
     ~\\{Estimadores}}
 
 \author{
- {Diana Carolina Arias Sinisterra Cod. 1528008}
+    {Diana Carolina Arias Sinisterra Cod. 1528008}
  ~\\{Kevin Steven Chica Garcia Cod. 1533173}
  ~\\{Cesar Andres Saavedra Vanegas Cod. 1628466}}
 
@@ -50,7 +49,8 @@
      \textbf{Universidad Del Valle}\   
     ~\\{Facultad De Ingenieria}
     ~\\{Estadistica}
-    ~\\{Octubre 2017}}
+    ~\\{Octubre}
+    ~\\{2017}}
  
  
  
@@ -84,7 +84,7 @@
 \bibliographystyle{apalike}
  
 % Desarrollo de los contenidos del documento
-\section{Primer punto}
+\section{Situacion 1}
 
 
 
@@ -188,7 +188,7 @@ $$I = \left[
 Este texto, al igual que aquel que est� precedido por un signo de porcentaje, no ser� mostrado en el documento final.
 \end{comment}
 
-\section{C�digo R}
+\subsection{Scripts R}
 El ambiente \emph{Verbatim} permite agregar c�digo de R.
 \begin{verbatim}
 getwd()
@@ -257,28 +257,39 @@ for(j in 1:1000){
 
 \end{verbatim}
 
-asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
-asddddddddddddddddddddddddddddddddddddddddddddddddd.
-\vspace{1cm}
-asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
-asddddddddddddddddddddddddddddddddddddddddddddddddd.
 
 
 
 
-\subsection{An�lisis}
-
-asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
-asddddddddddddddddddddddddddddddddddddddddddddddddd
-
-\section{Caso 3}
-
-asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
-asddddddddddddddddddddddddddddddddddddddddddddddddd
+\subsection{Analisis}
 
 
+\section{Situacion 2}
+
+\subsection{Punto a.}
+~\\\textbf{Si $\hat{\theta_1}$ y $\hat{\theta_2}$ son dos estimadores insesgados tales que:
+~\\$\hat{\theta_3}=a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}$}
+
+~\\ Aplico Esperanza a ambos lados 
+~\\ $E[\hat{\theta_3}] = E[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
+~\\ $E[\hat{\theta_3}] = E[a{\hat{\theta_1}}]+E[(1-a){\hat{\theta_2}}]$
+~\\ $E[\hat{\theta_3}] = E[a{\hat{\theta_1}}]+(1-a)E[{\hat{\theta_2}}]$ \textbf{Con $\hat{\theta_1}$ y $\hat{\theta_2}$ estimadores insesgados}\
+~\\ $E[\hat{\theta_3}] = a{\theta} + (1-a){\theta}$
+~\\ $E[\hat{\theta_3}] = a{\theta} + {\theta} - a{\theta}$
+~\\$E[\hat{\theta_3}]={\theta}$
+
+~\\\textbf{$\therefore \hat{\theta_3}$ Es un estimador insesgado.} 
  
 % Bibliograf�a utilizada 
 %\bibliography{Bibliografia}
- 
+
+\subsection{Punto b.} 
+
+~\\\textbf{ El coeficiente de variacion de $\hat{\theta_3}$ es}
+~\\
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=aVar[{\hat{\theta_1}}]+(1-a)Var[{\hat{\theta_2}}]$
+
+
 \end{document}
