@@ -76,8 +76,8 @@
 \fancyfoot{}
  
 % Encabezado y pie de p�gina
-\lhead{Texto del encabezado}
-\lfoot{Texto del pie de p�gina}
+\lhead{Introduccion a los Metodos Estadisticos}
+\lfoot{Universidad Del Valle}
 \rfoot{\thepage}
 
 % Estilo de la bibliograf�a
@@ -266,7 +266,7 @@ for(j in 1:1000){
 
 \section{Situacion 2}
 
-\subsection{Punto a.}
+\subsection{Punto A.}
 ~\\\textbf{Si $\hat{\theta_1}$ y $\hat{\theta_2}$ son dos estimadores insesgados tales que:
 ~\\$\hat{\theta_3}=a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}$}
 
@@ -280,16 +280,31 @@ for(j in 1:1000){
 
 ~\\\textbf{$\therefore \hat{\theta_3}$ Es un estimador insesgado.} 
  
-% Bibliograf�a utilizada 
-%\bibliography{Bibliografia}
 
-\subsection{Punto b.} 
+
+\subsection{Punto B.} 
 
 ~\\\textbf{ El coeficiente de variacion de $\hat{\theta_3}$ es}
 ~\\
 ~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
 ~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]$
-~\\ $Var[\hat{\theta_3}]=aVar[{\hat{\theta_1}}]+(1-a)Var[{\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]$
+~\\
+~\\\textbf{Como $Var[{\hat{\theta_1}}]=\sigma_1^2$ y $Var[{\hat{\theta_2}}]=\sigma_2^2$ entonces}
+
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-a)^2[\sigma_2^2]$
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-2a+a^2)[\sigma_2^2]$
+~\\ $Var[\hat{\theta_3}]=a^2\sigma_1^2+1\sigma_2^2-2a\sigma_2^2+a^2\sigma_2^2$
+
+~\\$\therefore$ \textbf{El coeficiente de variacion para $\hat{\theta_3}$ es:}  
+$var[\hat{\theta_3}]=a^2\sigma_1^2+a^2\sigma_2^2-2a\sigma_2^2+\sigma_2^2$
 
 
+\subsection{Punto C.} 
+
+
+
+
+% Bibliografia utilizada 
+\bibliography{Bibliografia}
 \end{document}
