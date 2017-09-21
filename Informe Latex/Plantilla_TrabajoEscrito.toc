@@ -1,0 +1,6 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Primer punto}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Nombre de la subsecci\'on}{3}{subsection.1.1}
+\contentsline {section}{\numberline {2}C\'odigo R}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}An\'alisis}{5}{subsection.2.1}
+\contentsline {section}{\numberline {3}Caso 3}{5}{section.3}

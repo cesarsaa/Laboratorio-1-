@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Plantilla: para la realización de informes.
+%Curso:     Simulación estadística.
+%Profesor:  Johann A. Ospina.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Establece el tipo de documento (artículo), tamaño de letra (10pt) a una columna.
+\documentclass[letterpaper,10pt,onecolumn,titlepage]{article} 
+ 
+ 
+% Cargar paquetes
+\usepackage{verbatim}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{subfigure}
+%\usepackage{ucs}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fontenc}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{fancyhdr}
+\usepackage[comma,authoryear]{natbib}
+\usepackage{url} %paquete para definir url
+\usepackage{hyperref}  %hipervinculos
+
+%Estilo de la página
+\pagestyle{fancy}
+
+%Establecer el margen
+\marginsize{2cm}{2cm}{1cm}{1cm}
+\setlength{\headheight}{13.1pt}
+
+
+
+% Portada
+\author{Nombre Autor 1 (Código)
+ \\
+ Nombre Autor 2 (código)}
+  
+\title{Titulo\\
+    Introducción a los Métodos Estadísticos\\
+    ~\\
+    Subtítulo\\
+    ~\\
+    \emph{Tema del documento}}
+\date{Fecha}
+ 
+ 
+ 
+\decimalpoint %Poner punto decimal
+ 
+\begin{document}
+ 
+% Se aplica el formato a las páginas. Se despliegan: portada e índices de materias, figuras y tablas
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+\maketitle
+\setcounter{page}{2}
+\tableofcontents{}
+%\thispagestyle{empty}
+%\newpage
+\listoffigures{}
+\listoftables
+
+\thispagestyle{empty}
+
+\newpage
+\fancyhead{}
+\fancyfoot{}
+ 
+% Encabezado y pie de página
+\lhead{Texto del encabezado}
+\lfoot{Texto del pie de página}
+\rfoot{\thepage}
+
+% Estilo de la bibliografía
+\bibliographystyle{apalike}
+ 
+% Desarrollo de los contenidos del documento
+\section{Primer punto}
+
+
+
+
+
+Despliegue de una tabla que se llama ``Tabla1'' junto a su número de referencia:
+
+
+\begin{table}[!h]
+\centering
+\caption{Titulo de la tabla}
+\begin{tabular}{lrr}
+\hline
+{\bf Indicador} &  {\bf $\mathbf{SO_{2}}$} & {\bf Temperatura} \\
+\hline
+  Promedio &     0.006 &     24.093 \\
+
+Desviación estándar &     0.007 &       2.950 \\
+
+   Mediana &     0.004 &       23.500 \\
+
+    Mínimo &    0.000 &       18.200 \\
+
+    Máximo &     0.127 &         32 \\
+
+ Asimetría &     5.415 &      0.451 \\
+\hline
+\end{tabular}
+\label{tbl:Descriptivas}  
+\end{table}
+
+Para referenciar una tabla, se utiliza el texto ``ref'' precedido de un \textit{backslash}: así, se referenciaría la Tabla \ref{tbl:Descriptivas}.
+\\
+\\
+Despliegue de una imagen que se llama ``Figura1'' junto a su número de referencia:
+ 
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Figura1.pdf}
+        \caption{Titulo de la figura}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+ 
+Para referenciar una figura, se utiliza el texto ``ref'' precedido de un \textit{backslash}: así, se referenciaría la Figura \ref{fig:Densidad}.
+\\
+\\
+Expresión matemática en línea con el texto: $f(x):=ax^2+bx+c$.
+\\
+\\ 
+Representación de una ecuación, sin número de referencia:
+ 
+$$y_{i} = \beta_{0} + \beta_{1}x_{i} + \epsilon_{i}$$
+ 
+Representación de una ecuación en una línea nueva, con número de referencia:
+ 
+\begin{equation}
+ \bar{X} = \sum_{i=1}^{n}\frac{x_{i}}{n}
+ \label{eq:media}
+\end{equation}
+ 
+Pare referenciar la ecuación \eqref{eq:media}. Se utiliza la etiqueta ``eqref'' precedido de un \textit{backslash}
+\\
+\\
+Para referenciar una cita bibliográficas se utiliza un archivo ``Bibliografia.bib''. Este contiene la información de las referencias utilizadas. Por ejemplo para citar dentro del texto: Según \cite{seber2012linear} plantea que el modelo de regresión.....
+
+
+ 
+\subsection{Nombre de la subsección}
+ 
+$\left(\frac{365}{3}\right) \cdot \left(\frac{365}{4}\right) $
+ 
+Una lista: 
+ 
+\begin{itemize}
+ \item primer ítem de la lista.
+ \item segundo ítem de la lista.
+\end{itemize}
+ 
+Numeración de una lista:
+ 
+\begin{enumerate}
+\item primer ítem de la lista.
+\item segundo ítem de la lista.
+\end{enumerate}
+
+
+ 
+Ejemplo para construir una matriz:
+ 
+$$I = \left[
+\begin{array}{c c c c c}
+        1    &    0    &    0    &    0    \\
+        0    &    1    &    0    &    0    \\
+        0    &    0    &    1    &    0    \\
+        0    &    0    &    0    &    1
+\end{array} \right]$$
+ 
+% Insertar una gran cantidad de comentarios (bloque)
+\begin{comment}
+Este texto, al igual que aquel que está precedido por un signo de porcentaje, no será mostrado en el documento final.
+\end{comment}
+
+\section{Código R}
+El ambiente \emph{Verbatim} permite agregar código de R.
+\begin{verbatim}
+getwd()
+k=70
+cumpledif=1
+p=0
+q=0
+for (j in 1:k){
+  cumpledif=cumpledif*(1-((j-1)/365))
+  q[j]=cumpledif
+  p[j]=1-cumpledif
+  cat(cumpledif,"\n")
+}
+
+windows()
+pdf("Texmaker/Graficos/Punto2.pdf")
+par(mfrow=c(1,3))
+plot(p,col="red", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
+tengan el mismo cumpleaños en funcion 
+     de la cantidad de estudiantes n")
+abline(h=0.5)
+abline(v=23)
+
+plot(q,col="blue", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
+NO tengan el mismo cumpleaños en funcion 
+     de la cantidad de estudiantes n")
+abline(h=0.5)
+abline(v=23)
+
+plot(p,col="red", xlab = "", ylab = "")
+par(new=TRUE)
+plot(q,col="blue", xlab = "", ylab = "")
+
+title(xlab = "n", ylab = "Probabilidad",main="Probabilidades de que dos o mas estudiantes 
+tengan el mismo cumpleaños (rojo) y su 
+evento complemetario (azul) en funcion de n")
+dev.off()
+
+###########simulacion punto 3a Exponencial
+
+U = runif(1000, 0, 1) #Generar U
+l = 4 #Par´ametro de la exponencial Lambda = 4
+X = -(1/l) * log(U)
+windows()
+pdf("Texmaker/Graficos/Punto3A.pdf")
+par(mfrow=c(1,2))
+plot(density(U),col="blue", xlab = "X", ylab = "Densidad", main = expression(Unif(0,1)))
+plot(density(X),col="red", xlab = "X", ylab = "Densidad", main = expression(Exp(lambda=4)))
+dev.off()
+
+############ Punto 3b Poisson 
+x=0
+for(j in 1:1000){
+  lambda=7
+  i = 0
+  p = exp(-lambda)
+  f = p
+  u= runif(1000,0,1)
+  while(u>=f){
+    p=lambda*p/(i + 1)
+    f = f + p
+    i = i +1
+    x[j] = i
+  } 
+}
+
+\end{verbatim}
+
+asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
+asddddddddddddddddddddddddddddddddddddddddddddddddd.
+\vspace{1cm}
+asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
+asddddddddddddddddddddddddddddddddddddddddddddddddd.
+
+
+
+
+\subsection{Análisis}
+
+asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
+asddddddddddddddddddddddddddddddddddddddddddddddddd
+
+\section{Caso 3}
+
+asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
+asddddddddddddddddddddddddddddddddddddddddddddddddd
+
+
+ 
+% Bibliografía utilizada 
+%\bibliography{Bibliografia}
+ 
+\end{document}
