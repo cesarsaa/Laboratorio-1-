@@ -8,3 +8,4 @@
 \contentsline {subsection}{\numberline {2.2}Punto B.}{6}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Punto C.}{6}{subsection.2.3}
 \contentsline {section}{\numberline {3}Situacion 3}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Punto A.}{6}{subsection.3.1}
