@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Plantilla: para la realización de informes.
-%Curso:     Simulación estadística.
+%Plantilla: para la realizaciï¿½n de informes.
+%Curso:     Simulaciï¿½n estadï¿½stica.
 %Profesor:  Johann A. Ospina.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%Establece el tipo de documento (artículo), tamaño de letra (10pt) a una columna.
-\documentclass[letterpaper,10pt,onecolumn,titlepage]{article} 
+%Establece el tipo de documento (artï¿½culo), tamaï¿½o de letra (10pt) a una columna.
+\documentclass[letterpaper,12pt,onecolumn,titlepage]{article} 
  
  
 % Cargar paquetes
@@ -14,8 +14,8 @@
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage{subfigure}
-%\usepackage{ucs}
+\usepackage{subfigure}
+\usepackage{ucs}
 \usepackage[latin1]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{fontenc}
@@ -26,7 +26,7 @@
 \usepackage{url} %paquete para definir url
 \usepackage{hyperref}  %hipervinculos
 
-%Estilo de la página
+%Estilo de la pï¿½gina
 \pagestyle{fancy}
 
 %Establecer el margen
@@ -36,17 +36,21 @@
 
 
 % Portada
-\author{Nombre Autor 1 (Código)
- \\
- Nombre Autor 2 (código)}
-  
-\title{Titulo\\
-    Introducción a los Métodos Estadísticos\\
-    ~\\
-    Subtítulo\\
-    ~\\
-    \emph{Tema del documento}}
-\date{Fecha}
+\title{
+    \textbf{Laboratorio N.1}\
+    ~\\{Introduccion a Los Metodos Estadisticos}   
+    ~\\{Estimadores}}
+
+\author{
+ {Diana Carolina Arias Sinisterra Cod. 1528008}
+ ~\\{Kevin Steven Chica Garcia Cod. 1533173}
+ ~\\{Cesar Andres Saavedra Vanegas Cod. 1628466}}
+
+\date{
+     \textbf{Universidad Del Valle}\   
+    ~\\{Facultad De Ingenieria}
+    ~\\{Estadistica}
+    ~\\{Octubre 2017}}
  
  
  
@@ -54,8 +58,8 @@
  
 \begin{document}
  
-% Se aplica el formato a las páginas. Se despliegan: portada e índices de materias, figuras y tablas
-\renewcommand{\listtablename}{Índice de tablas}
+% Se aplica el formato a las pï¿½ginas. Se despliegan: portada e ï¿½ndices de materias, figuras y tablas
+\renewcommand{\listtablename}{ï¿½ndice de tablas}
 \renewcommand{\tablename}{Tabla}
 \maketitle
 \setcounter{page}{2}
@@ -71,12 +75,12 @@
 \fancyhead{}
 \fancyfoot{}
  
-% Encabezado y pie de página
+% Encabezado y pie de pï¿½gina
 \lhead{Texto del encabezado}
-\lfoot{Texto del pie de página}
+\lfoot{Texto del pie de pï¿½gina}
 \rfoot{\thepage}
 
-% Estilo de la bibliografía
+% Estilo de la bibliografï¿½a
 \bibliographystyle{apalike}
  
 % Desarrollo de los contenidos del documento
@@ -86,7 +90,7 @@
 
 
 
-Despliegue de una tabla que se llama ``Tabla1'' junto a su número de referencia:
+Despliegue de una tabla que se llama ``Tabla1'' junto a su nï¿½mero de referencia:
 
 
 \begin{table}[!h]
@@ -98,24 +102,24 @@ Despliegue de una tabla que se llama ``Tabla1'' junto a su número de referencia:
 \hline
   Promedio &     0.006 &     24.093 \\
 
-Desviación estándar &     0.007 &       2.950 \\
+Desviaciï¿½n estï¿½ndar &     0.007 &       2.950 \\
 
    Mediana &     0.004 &       23.500 \\
 
-    Mínimo &    0.000 &       18.200 \\
+    Mï¿½nimo &    0.000 &       18.200 \\
 
-    Máximo &     0.127 &         32 \\
+    Mï¿½ximo &     0.127 &         32 \\
 
- Asimetría &     5.415 &      0.451 \\
+ Asimetrï¿½a &     5.415 &      0.451 \\
 \hline
 \end{tabular}
 \label{tbl:Descriptivas}  
 \end{table}
 
-Para referenciar una tabla, se utiliza el texto ``ref'' precedido de un \textit{backslash}: así, se referenciaría la Tabla \ref{tbl:Descriptivas}.
+Para referenciar una tabla, se utiliza el texto ``ref'' precedido de un \textit{backslash}: asï¿½, se referenciarï¿½a la Tabla \ref{tbl:Descriptivas}.
 \\
 \\
-Despliegue de una imagen que se llama ``Figura1'' junto a su número de referencia:
+Despliegue de una imagen que se llama ``Figura1'' junto a su nï¿½mero de referencia:
  
 \begin{figure}[!h]
     \begin{center}
@@ -125,46 +129,46 @@ Despliegue de una imagen que se llama ``Figura1'' junto a su número de referenci
     \end{center}
 \end{figure}
  
-Para referenciar una figura, se utiliza el texto ``ref'' precedido de un \textit{backslash}: así, se referenciaría la Figura \ref{fig:Densidad}.
+Para referenciar una figura, se utiliza el texto ``ref'' precedido de un \textit{backslash}: asï¿½, se referenciarï¿½a la Figura \ref{fig:Densidad}.
 \\
 \\
-Expresión matemática en línea con el texto: $f(x):=ax^2+bx+c$.
+Expresiï¿½n matemï¿½tica en lï¿½nea con el texto: $f(x):=ax^2+bx+c$.
 \\
 \\ 
-Representación de una ecuación, sin número de referencia:
+Representaciï¿½n de una ecuaciï¿½n, sin nï¿½mero de referencia:
  
 $$y_{i} = \beta_{0} + \beta_{1}x_{i} + \epsilon_{i}$$
  
-Representación de una ecuación en una línea nueva, con número de referencia:
+Representaciï¿½n de una ecuaciï¿½n en una lï¿½nea nueva, con nï¿½mero de referencia:
  
 \begin{equation}
  \bar{X} = \sum_{i=1}^{n}\frac{x_{i}}{n}
  \label{eq:media}
 \end{equation}
  
-Pare referenciar la ecuación \eqref{eq:media}. Se utiliza la etiqueta ``eqref'' precedido de un \textit{backslash}
+Pare referenciar la ecuaciï¿½n \eqref{eq:media}. Se utiliza la etiqueta ``eqref'' precedido de un \textit{backslash}
 \\
 \\
-Para referenciar una cita bibliográficas se utiliza un archivo ``Bibliografia.bib''. Este contiene la información de las referencias utilizadas. Por ejemplo para citar dentro del texto: Según \cite{seber2012linear} plantea que el modelo de regresión.....
+Para referenciar una cita bibliogrï¿½ficas se utiliza un archivo ``Bibliografia.bib''. Este contiene la informaciï¿½n de las referencias utilizadas. Por ejemplo para citar dentro del texto: Segï¿½n \cite{seber2012linear} plantea que el modelo de regresiï¿½n.....
 
 
  
-\subsection{Nombre de la subsección}
+\subsection{Nombre de la subsecciï¿½n}
  
 $\left(\frac{365}{3}\right) \cdot \left(\frac{365}{4}\right) $
  
 Una lista: 
  
 \begin{itemize}
- \item primer ítem de la lista.
- \item segundo ítem de la lista.
+ \item primer ï¿½tem de la lista.
+ \item segundo ï¿½tem de la lista.
 \end{itemize}
  
-Numeración de una lista:
+Numeraciï¿½n de una lista:
  
 \begin{enumerate}
-\item primer ítem de la lista.
-\item segundo ítem de la lista.
+\item primer ï¿½tem de la lista.
+\item segundo ï¿½tem de la lista.
 \end{enumerate}
 
 
@@ -181,11 +185,11 @@ $$I = \left[
  
 % Insertar una gran cantidad de comentarios (bloque)
 \begin{comment}
-Este texto, al igual que aquel que está precedido por un signo de porcentaje, no será mostrado en el documento final.
+Este texto, al igual que aquel que estï¿½ precedido por un signo de porcentaje, no serï¿½ mostrado en el documento final.
 \end{comment}
 
-\section{Código R}
-El ambiente \emph{Verbatim} permite agregar código de R.
+\section{Cï¿½digo R}
+El ambiente \emph{Verbatim} permite agregar cï¿½digo de R.
 \begin{verbatim}
 getwd()
 k=70
@@ -203,13 +207,13 @@ windows()
 pdf("Texmaker/Graficos/Punto2.pdf")
 par(mfrow=c(1,3))
 plot(p,col="red", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
-tengan el mismo cumpleaños en funcion 
+tengan el mismo cumpleaï¿½os en funcion 
      de la cantidad de estudiantes n")
 abline(h=0.5)
 abline(v=23)
 
 plot(q,col="blue", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
-NO tengan el mismo cumpleaños en funcion 
+NO tengan el mismo cumpleaï¿½os en funcion 
      de la cantidad de estudiantes n")
 abline(h=0.5)
 abline(v=23)
@@ -219,14 +223,14 @@ par(new=TRUE)
 plot(q,col="blue", xlab = "", ylab = "")
 
 title(xlab = "n", ylab = "Probabilidad",main="Probabilidades de que dos o mas estudiantes 
-tengan el mismo cumpleaños (rojo) y su 
+tengan el mismo cumpleaï¿½os (rojo) y su 
 evento complemetario (azul) en funcion de n")
 dev.off()
 
 ###########simulacion punto 3a Exponencial
 
 U = runif(1000, 0, 1) #Generar U
-l = 4 #Par´ametro de la exponencial Lambda = 4
+l = 4 #Parï¿½ametro de la exponencial Lambda = 4
 X = -(1/l) * log(U)
 windows()
 pdf("Texmaker/Graficos/Punto3A.pdf")
@@ -262,7 +266,7 @@ asddddddddddddddddddddddddddddddddddddddddddddddddd.
 
 
 
-\subsection{Análisis}
+\subsection{Anï¿½lisis}
 
 asdasdasssssssssssssssssssssssssssssssssssssssssssssssss
 asddddddddddddddddddddddddddddddddddddddddddddddddd
@@ -274,7 +278,7 @@ asddddddddddddddddddddddddddddddddddddddddddddddddd
 
 
  
-% Bibliografía utilizada 
+% Bibliografï¿½a utilizada 
 %\bibliography{Bibliografia}
  
 \end{document}
