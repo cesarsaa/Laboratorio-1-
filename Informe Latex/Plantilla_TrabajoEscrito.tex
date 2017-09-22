@@ -287,13 +287,32 @@ for(j in 1:1000){
 ~\\ Como $E[{\hat{\theta_1}}]={\theta}$ y $E[{\hat{\theta_2}}]={\theta}$ tenemos:
 ~\\ $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]=E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2}$, por tanto:
 ~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-2a+a^2)[\sigma_2^2]+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})$
-~\\ Como sabemos que $E[\hat{\theta_3}={\theta}]$
+~\\ Como sabemos que $E[\hat{\theta_3}]={\theta}$
 
 ~\\$\therefore$ \textbf{El coeficiente de variacion para $\hat{\theta_3}$ es:}  
 $$CV[\hat{\theta_3}]=\frac{\sqrt{a^2\sigma_1^2+(1-a)^2\sigma_2^2+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})}}{{\theta}}$$
 
 \subsection{Punto C.} 
-
+~\\ Como en este punto sabemos que $\hat{\theta_1}$ y $\hat{\theta_2}$ son independientes, entonces la $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]=0$ y por tanto:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
+~\\ Distribuyendo la varianza y aplicando sus propiedades, nos queda:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]$ 
+~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=a^2\sigma_1^2+(1-a)^2\sigma_2^2$ 
+~\\ Note que $Var[\hat{\theta_3}]$ se convierte en una funcion que depende de a, ya que, $\sigma_1^2$ y $\sigma_2^2$ son conocidas, entonces, debemos encontrar a, que haga minima dicha funcion, en otras palabras, todo se reduce a encontrar el minimo de la funcion. Para ello procedemos de la siguiente manera:
+~\\ 1. Encontramos la primera derivada de la funcion con respecto a la variable a:
+~\\ $$f'(a)=2a\sigma_1^2 - 2(1-a)\sigma_2^2$$
+~\\ 2. Igualamos el resultado de la primera derivada a 0 y despejamos la variable que nos interesa obtener, en este caso, despejamos a:
+$$2a\sigma_1^2 - 2(1-a)\sigma_2^2=0$$
+$$2a\sigma_1^2 - (2-2a)\sigma_2^2=0$$
+$$2a\sigma_1^2 - 2\sigma_2^2 + 2a\sigma_2^2=0$$
+$$2a\sigma_1^2  + 2a\sigma_2^2= 2\sigma_2^2$$
+$$a(2\sigma_1^2+2\sigma_2^2)=2\sigma_2^2$$
+$$a=\frac{2\sigma_2^2}{2\sigma_1^2+2\sigma_2^2}$$
+~\\$\therefore${$a=\frac{\sigma_2^2}{\sigma_1^2+\sigma_2^2}$}
+~\\ 3. Ahora, debemos encontrar la segunda derivada y ver si es positiva o negativa para saber si encontramos un minimo o un maximo:
+~\\$$f^{\prime\prime}(a)=2\sigma_1^2+2\sigma_2^2 > 0$$
+~\\ Como nos dio que la segunda derivada parcial es siempre positiva, concluimos que el a hallado anteriormente es un minimo. Por lo tanto, para hacer que la $Var[\hat{\theta_3}]$ sea minima, debemos escoger a como $a=\frac{\sigma_2^2}{\sigma_1^2+\sigma_2^2}$.
 
 \section{Situacion 3}
 \subsection{Punto A.}
