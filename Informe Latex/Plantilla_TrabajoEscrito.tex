@@ -273,19 +273,24 @@ for(j in 1:1000){
 
 ~\\\textbf{ El coeficiente de variacion de $\hat{\theta_3}$ es}
 ~\\
-~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
-~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]$
-~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]$
+~\\ $$CV[\hat{\theta_3}]=\frac{\sqrt{Var[\hat{\theta_3}]}}{E[\hat{\theta_3}]}$$
+~\\ Hallamos la $Var[\hat{\theta_3}]$
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]+2Cov[a{\hat{\theta_1}},(1-a){\hat{\theta_2}}]$,    ya que no sabemos si ${\hat{\theta_1}}$ y ${\hat{\theta_2}}$ son independientes
+~\\ Entonces, distribuyendo la Varianza y por las propiedades de Covarianza:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]+2a(1-a) Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]+(2a-2a^2)Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
 ~\\
 ~\\\textbf{Como $Var[{\hat{\theta_1}}]=\sigma_1^2$ y $Var[{\hat{\theta_2}}]=\sigma_2^2$ entonces}
 
-~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-a)^2[\sigma_2^2]$
-~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-2a+a^2)[\sigma_2^2]$
-~\\ $Var[\hat{\theta_3}]=a^2\sigma_1^2+1\sigma_2^2-2a\sigma_2^2+a^2\sigma_2^2$
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-a)^2[\sigma_2^2]+(2a-2a^2)Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
+~\\ Sabemos que $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]= E[{\hat{\theta_1}}{\hat{\theta_2}}]- E[{\hat{\theta_1}}]*E[{\hat{\theta_2}}]$, entonces:
+~\\ Como $E[{\hat{\theta_1}}]={\theta}$ y $E[{\hat{\theta_2}}]={\theta}$ tenemos:
+~\\ $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]=E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2}$, por tanto:
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-2a+a^2)[\sigma_2^2]+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})$
+~\\ Como sabemos que $E[\hat{\theta_3}={\theta}]$
 
 ~\\$\therefore$ \textbf{El coeficiente de variacion para $\hat{\theta_3}$ es:}  
-$$var[\hat{\theta_3}]=a^2\sigma_1^2+a^2\sigma_2^2-2a\sigma_2^2+\sigma_2^2$$
-
+$$CV[\hat{\theta_3}]=\frac{\sqrt{a^2\sigma_1^2+(1-a)^2\sigma_2^2+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})}}{{\theta}}$$
 
 \subsection{Punto C.} 
 
