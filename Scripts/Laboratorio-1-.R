@@ -139,12 +139,13 @@ abline(h = 0, lty = 2, lwd = 2, col = 2)
 # ------------------------------------------------------- #
 # Punto 4.a.
 # X~Exponencial(Lambda=5)
-x <- rexp(500,5)
+n=500
+x <- rexp(n,5)
 media1 <- mean(x)
 sd1 <- sd(x)
 
 mediaMuestral=function(n){
-  muestra=rexp(500,5)
+  muestra=rexp(n,5)
   media=mean(muestra)
   return(media)
 }
@@ -161,7 +162,7 @@ para30 <- muchasMedias[1:30]
 para50 <- muchasMedias[1:50]
 para100 <- muchasMedias[1:100]
 
-h <- hist(muchasMedias,xlab="Media muestral", ylab="Frecuencia", col="slategray1",
+h <- hist(muchasMedias,xlab="Media muestral", ylab="Frecuencia", col="azure3",
      xlim=c(0.17,0.23),freq=T,
      main="Histograma de las medias muestrales observadas en 1000 muestras de tamaño 500 para una funcion Exponencial de Lambda = 5")
 xfit <- seq(min(x), max(x), length = 1000)
@@ -170,34 +171,95 @@ yfit <- yfit * diff(h$mids[1:2]) * length(muchasMedias)
 lines (xfit, yfit, col = "red", lwd = 2)
 
 par(mfrow=c(3,3))
-hist(x, main="Histograma funcion exponencial con Lambda = 5" )
-hist(para5, main="Medias observadas en 1000 muestras de tamaño 5")
-hist(para10, main="Medias observadas en 1000 muestras de tamaño 10")
+hist(x, main="Histograma funcion exponencial con Lambda = 5", col="azure3")
+hist(para5, main="Medias observadas en 1000 muestras de tamaño 5", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+hist(para10, main="Medias observadas en 1000 muestras de tamaño 10", xlab="Media muestral", ylab="Frecuencia", col="azure3")
 xfit <- seq(min(x), max(x), length = 1000)
 yfit <- dnorm(xfit, mean(para10), sd = (media1)/(sqrt(500)))
 yfit <- yfit * diff(h$mids[1:2]) * length(para10)
 lines (xfit, yfit, col = "red", lwd = 2)
-hist(para20, main="Medias observadas en 1000 muestras de tamaño 20")
+hist(para20, main="Medias observadas en 1000 muestras de tamaño 20", xlab="Media muestral", ylab="Frecuencia", col="azure3")
 xfit <- seq(min(x), max(x), length = 1000)
 yfit <- dnorm(xfit, mean(para20), sd = (media1)/(sqrt(500)))
 yfit <- yfit * diff(h$mids[1:2]) * length(para20)
 lines (xfit, yfit, col = "red", lwd = 2)
-hist(para30, main="Medias observadas en 1000 muestras de tamaño 30")
+hist(para30, main="Medias observadas en 1000 muestras de tamaño 30", xlab="Media muestral", ylab="Frecuencia", col="azure3")
 xfit <- seq(min(x), max(x), length = 1000)
 yfit <- dnorm(xfit, mean(para30), sd = (media1)/(sqrt(500)))
 yfit <- yfit * diff(h$mids[1:2]) * length(para30)
 lines (xfit, yfit, col = "red", lwd = 2)
-hist(para50, main="Medias observadas en 1000 muestras de tamaño 50")
+hist(para50, main="Medias observadas en 1000 muestras de tamaño 50", xlab="Media muestral", ylab="Frecuencia", col="azure3")
 xfit <- seq(min(x), max(x), length = 1000)
 yfit <- dnorm(xfit, mean(para50), sd = (media1)/(sqrt(500)))
 yfit <- yfit * diff(h$mids[1:2]) * length(para50)
 lines (xfit, yfit, col = "red", lwd = 2)
-hist(para100, main="Medias observadas en 1000 muestras de tamaño 100")
+hist(para100, main="Medias observadas en 1000 muestras de tamaño 100", xlab="Media muestral", ylab="Frecuencia", col="azure3")
 xfit <- seq(min(x), max(x), length = 1000)
 yfit <- dnorm(xfit, mean(para100), sd = (media1)/(sqrt(500)))
 yfit <- yfit * diff(h$mids[1:2]) * length(para100)
 lines (xfit, yfit, col = "red", lwd = 2)
 
+# Punto 4.b.
+## t-Student, grados de libertad = 7 
+n2=500
+y <- rt(n2,7)
+media2 <- mean(y)
+sd2 <- sd(y)
+hist(y)
+
+mediaMuestral2=function(n2){
+  muestra=rt(n2,7)
+  media=mean(muestra)
+  return(media)
+}
+
+m2=1000
+muchasMedias2=replicate(m2,mediaMuestral2(n2))
+mean(muchasMedias2)
+sd(muchasMedias2)
+
+tpara5 <- muchasMedias2[1:5]
+tpara10 <- muchasMedias2[1:10]
+tpara20 <- muchasMedias2[1:20]
+tpara30 <- muchasMedias2[1:30]
+tpara50 <- muchasMedias2[1:50]
+tpara100 <- muchasMedias2[1:100]
+
+t <- hist(muchasMedias2,xlab="Media muestral", ylab="Frecuencia", col="slategray1",freq=T,
+          main="Histograma de las medias muestrales observadas en 1000 muestras de tamaño 500 para una funcion t-Student con k=7")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(muchasMedias2), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(muchasMedias2)
+lines (xfit, yfit, col = "red", lwd = 2)
+
+par(mfrow=c(3,3))
+hist(y, main="Histograma funcion t-Student con 7 grados de libertad",col="azure2")
+hist(tpara5, main="Medias observadas en 1000 muestras de tamaño 5",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+hist(tpara10, main="Medias observadas en 1000 muestras de tamaño 10",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara10), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara10)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara20, main="Medias observadas en 1000 muestras de tamaño 20",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara20), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara20)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara30, main="Medias observadas en 1000 muestras de tamaño 30",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara30), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(tpara30)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara50, main="Medias observadas en 1000 muestras de tamaño 50",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara50), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara50)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara100, main="Medias observadas en 1000 muestras de tamaño 100",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara100), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara100)
+lines (xfit, yfit, col = "red", lwd = 2)
 
 # ------------------------------------------------------- #
 #4.a
@@ -334,8 +396,6 @@ hist(Dis.pro5, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60",
      main = "Histograma de la distribuci?n del promedio para n=50",freq = FALSE)
 hist(Dis.pro6, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
      main = "Histograma de la distribuci?n del promedio para n=100",freq = FALSE)
-
-
 
 # ------------------------------------------------------- #
 # Punto 5
