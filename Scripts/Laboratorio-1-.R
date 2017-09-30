@@ -228,7 +228,7 @@ tpara100 <- muchasMedias2[1:100]
 t <- hist(muchasMedias2,xlab="Media muestral", ylab="Frecuencia", col="slategray1",freq=T,
           main="Histograma de las medias muestrales observadas en 1000 muestras de tamaño 500 para una funcion t-Student con k=7")
 xfit <- seq(min(y), max(y), length = 1000)
-yfit <- dnorm(xfit, mean(muchasMedias2), sd = (media2)/(sqrt(500)))
+yfit <- dnorm(xfit, mean(muchasMedias2), sd=(media2/500))
 yfit <- yfit * diff(t$mids[1:2]) * length(muchasMedias2)
 lines (xfit, yfit, col = "red", lwd = 2)
 
@@ -398,7 +398,7 @@ hist(Dis.pro6, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60",
      main = "Histograma de la distribuci?n del promedio para n=100",freq = FALSE)
 
 # ------------------------------------------------------- #
-# Punto 5
+# Punto 5.C.
 m <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
 xbarra=3334  #Media de decision
 sigma=400  #Desviacion de x
@@ -412,6 +412,30 @@ for (i in 1:length(m)){
 x11()
 plot(m, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m", col="black", lty=3, lwd=2) 
 
+#Punto 5.D.
+m2 <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k2=5   #tamaño de muestra
+Proba2=numeric(length(m2))
+for (i in 1:length(m2)){
+  prob2=pnorm((xbarra-m2[i])/(sigma/sqrt(k2)))
+  Proba2[i]=prob2
+}
+
+m3 <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k3=6   #tamaño de muestra
+Proba3=numeric(length(m3))
+for (i in 1:length(m3)){
+  prob3=pnorm((xbarra-m3[i])/(sigma/sqrt(k3)))
+  Proba3[i]=prob3
+}
+
+par(mfrow=c(1,2))
+plot(m2, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m con k=5", col="blue", lty=3, lwd=2) 
+plot(m3, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m con k=6", col="red", lty=3, lwd=2) 
 
 # ------------------------------------------------------- #
 
