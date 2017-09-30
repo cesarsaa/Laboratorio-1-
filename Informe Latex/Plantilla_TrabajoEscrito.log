@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.23)  30 SEP 2017 12:28
+=======
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 SEP 2017 11:00
+>>>>>>> c6b3611a95b6403ac615d579c6e9e0eb978d4f20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,10 +737,6 @@ File: Figuras/ECM.png Graphic file (type png)
  <use Figuras/ECM.png>
 Package pdftex.def Info: Figuras/ECM.png used on input line 287.
 (pdftex.def)             Requested size: 284.52756pt x 284.52782pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 293.
 Package babel Info: Redefining spanish shorthand >>
@@ -761,6 +761,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 293.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 293.
+
 [6 <./Figuras/A.png>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 293.
@@ -1158,6 +1159,29 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
+ 7952 strings out of 493334
+ 112409 string characters out of 3139234
+ 213054 words of memory out of 3000000
+ 11305 multiletter control sequences out of 15000+200000
+ 14837 words of font info for 59 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 29i,11n,43p,858b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Plantilla_TrabajoEscrito.pdf (14 pages, 231375 bytes).
+=======
  7929 strings out of 493014
  112448 string characters out of 6133351
  213388 words of memory out of 5000000
@@ -1180,6 +1204,7 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 Output written on Plantilla_TrabajoEscrito.pdf (14 pages, 206518 bytes).
+>>>>>>> c6b3611a95b6403ac615d579c6e9e0eb978d4f20
 PDF statistics:
  256 PDF objects out of 1000 (max. 8388607)
  211 compressed objects within 3 object streams
