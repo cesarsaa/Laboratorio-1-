@@ -52,7 +52,7 @@ var_theta_est <- matrix(NA, nrow = 6, ncol = 4)
 ECM_theta_est <- matrix(NA, nrow = 6, ncol = 4)
 Sesgo_theta_est <- matrix(NA, nrow = 6, ncol = 4)
 
-# Estimación del Sesgo, Varianza y Error Cuadrático Medio
+# Estimaci?n del Sesgo, Varianza y Error Cuadr?tico Medio
 for (j in 1:length(n)) {
   
   muestra <- sample(Pob, n[j])
@@ -89,7 +89,7 @@ ECM_theta_est <- as.data.frame(ECM_theta_est)
 Sesgo_theta_est <- as.data.frame(Sesgo_theta_est)
 
 
-#Gráfica del comportamiento del sesgo:
+#Gr?fica del comportamiento del sesgo:
 x11()
 plot(n, Sesgo_theta_est[, 1], type = "b", ylim = c(min(Sesgo_theta_est) - 10, max(Sesgo_theta_est) + 
                                                10), pch = 19, ylab = expression(hat(theta)), main = "Comportamiento del sesgo")
@@ -100,7 +100,7 @@ legend(x=220,y=200, c(expression(hat(theta[1])), expression(hat(theta[2])),expre
        col = c(1, 2, 3,4), lwd = c(2, 2))
 abline(h = 0, lty = 2, lwd = 2, col = 2)
 
-#Gráfica de la varianza de los estimadores
+#Gr?fica de la varianza de los estimadores
 x11()
 plot(n, var_theta_est[, 1], type = "b", ylim = c(min(var_theta_est) - 10, max(var_theta_est) + 
                                                      10), pch = 19, ylab = expression(hat(theta)), main = "Comportamiento de la varianza")
@@ -111,10 +111,10 @@ legend(x=220,y=10000, c(expression(hat(theta[1])), expression(hat(theta[2])),exp
        col = c(1, 2, 3,4), lwd = c(2, 2))
 abline(h = 0, lty = 2, lwd = 2, col = 2)
 
-#Gráfica del resultado de la estimación
+#Gr?fica del resultado de la estimaci?n
 x11()
 plot(n, theta_est[, 1], type = "b", ylim = c(min(theta_est) - 10, max(theta_est) + 
-                                                   10), pch = 19, ylab = expression(hat(theta)), main = "Resultado de la estimación")
+                                                   10), pch = 19, ylab = expression(hat(theta)), main = "Resultado de la estimaci?n")
 lines(n, theta_est[,2], type = "b", col = 2, pch = 19)
 lines(n, theta_est[,3], type = "b", col = 3, pch = 19)
 lines(n, theta_est[,4], type = "b", col = 4, pch = 19)
@@ -137,7 +137,130 @@ abline(h = 0, lty = 2, lwd = 2, col = 2)
 
 
 # ------------------------------------------------------- #
-# Punto 4
+# Punto 4.a.
+# X~Exponencial(Lambda=5)
+n=500
+x <- rexp(n,5)
+media1 <- mean(x)
+sd1 <- sd(x)
+
+mediaMuestral=function(n){
+  muestra=rexp(n,5)
+  media=mean(muestra)
+  return(media)
+}
+
+m=1000
+muchasMedias=replicate(m,mediaMuestral(n))
+mean(muchasMedias)
+sd(muchasMedias)
+
+para5 <- muchasMedias[1:5]
+para10 <- muchasMedias[1:10]
+para20 <- muchasMedias[1:20]
+para30 <- muchasMedias[1:30]
+para50 <- muchasMedias[1:50]
+para100 <- muchasMedias[1:100]
+
+h <- hist(muchasMedias,xlab="Media muestral", ylab="Frecuencia", col="azure3",
+     xlim=c(0.17,0.23),freq=T,
+     main="Histograma de las medias muestrales observadas en 1000 muestras de tamaÃ±o 500 para una funcion Exponencial de Lambda = 5")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(muchasMedias), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(muchasMedias)
+lines (xfit, yfit, col = "red", lwd = 2)
+
+par(mfrow=c(3,3))
+hist(x, main="Histograma funcion exponencial con Lambda = 5", col="azure3")
+hist(para5, main="Medias observadas en 1000 muestras de tamaÃ±o 5", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+hist(para10, main="Medias observadas en 1000 muestras de tamaÃ±o 10", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para10), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para10)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para20, main="Medias observadas en 1000 muestras de tamaÃ±o 20", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para20), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para20)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para30, main="Medias observadas en 1000 muestras de tamaÃ±o 30", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para30), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para30)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para50, main="Medias observadas en 1000 muestras de tamaÃ±o 50", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para50), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para50)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para100, main="Medias observadas en 1000 muestras de tamaÃ±o 100", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para100), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para100)
+lines (xfit, yfit, col = "red", lwd = 2)
+
+# Punto 4.b.
+## t-Student, grados de libertad = 7 
+n2=500
+y <- rt(n2,7)
+media2 <- mean(y)
+sd2 <- sd(y)
+hist(y)
+
+mediaMuestral2=function(n2){
+  muestra=rt(n2,7)
+  media=mean(muestra)
+  return(media)
+}
+
+m2=1000
+muchasMedias2=replicate(m2,mediaMuestral2(n2))
+mean(muchasMedias2)
+sd(muchasMedias2)
+
+tpara5 <- muchasMedias2[1:5]
+tpara10 <- muchasMedias2[1:10]
+tpara20 <- muchasMedias2[1:20]
+tpara30 <- muchasMedias2[1:30]
+tpara50 <- muchasMedias2[1:50]
+tpara100 <- muchasMedias2[1:100]
+
+t <- hist(muchasMedias2,xlab="Media muestral", ylab="Frecuencia", col="slategray1",freq=T,
+          main="Histograma de las medias muestrales observadas en 1000 muestras de tamaÃ±o 500 para una funcion t-Student con k=7")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(muchasMedias2), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(muchasMedias2)
+lines (xfit, yfit, col = "red", lwd = 2)
+
+par(mfrow=c(3,3))
+hist(y, main="Histograma funcion t-Student con 7 grados de libertad",col="azure2")
+hist(tpara5, main="Medias observadas en 1000 muestras de tamaÃ±o 5",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+hist(tpara10, main="Medias observadas en 1000 muestras de tamaÃ±o 10",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara10), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara10)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara20, main="Medias observadas en 1000 muestras de tamaÃ±o 20",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara20), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara20)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara30, main="Medias observadas en 1000 muestras de tamaÃ±o 30",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara30), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(tpara30)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara50, main="Medias observadas en 1000 muestras de tamaÃ±o 50",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara50), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara50)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara100, main="Medias observadas en 1000 muestras de tamaÃ±o 100",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara100), sd = (media2)/(sqrt(500)))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara100)
+lines (xfit, yfit, col = "red", lwd = 2)
+
 # ------------------------------------------------------- #
 #4.a
 options(max.print = 99999999)
@@ -192,24 +315,24 @@ for (i in 1:numeroMuestras) {
 }
 Dis.prom6 <- apply(Mat.prom6, 1, mean)
 
-#Gráficos:
+#Gr?ficos:
 mat <- matrix(c(1,1,1,2,3,4,5,6,7),ncol = 3,byrow = T)
 x11()
 layout(mat)
 hist(poblacion, xlab = "X", ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de frecuencias de una población exponencial con landa=5",freq = FALSE)
+     main = "Histograma de frecuencias de una poblaci?n exponencial con landa=5",freq = FALSE)
 hist(Dis.prom1, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=5",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=5",freq = FALSE)
 hist(Dis.prom2, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=10",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=10",freq = FALSE)
 hist(Dis.prom3, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=20",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=20",freq = FALSE)
 hist(Dis.prom4, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=30",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=30",freq = FALSE)
 hist(Dis.prom5, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=50",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=50",freq = FALSE)
 hist(Dis.prom6, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=100",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=100",freq = FALSE)
 
 
 #4.b
@@ -256,32 +379,30 @@ for (i in 1:numeroMuestras) {
 }
 Dis.pro6 <- apply(Mat.pro6, 1, mean)
 
-#Gráficos:
+#Gr?ficos:
 x11()
 layout(mat)
 hist(poblacion, xlab = "X", ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de frecuencias de una población T de student con k=7",freq = FALSE)
+     main = "Histograma de frecuencias de una poblaci?n T de student con k=7",freq = FALSE)
 hist(Dis.pro1, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=5",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=5",freq = FALSE)
 hist(Dis.pro2, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=10",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=10",freq = FALSE)
 hist(Dis.pro3, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=20",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=20",freq = FALSE)
 hist(Dis.pro4, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=30",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=30",freq = FALSE)
 hist(Dis.pro5, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=50",freq = FALSE)
+     main = "Histograma de la distribuci?n del promedio para n=50",freq = FALSE)
 hist(Dis.pro6, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60", 
-     main = "Histograma de la distribución del promedio para n=100",freq = FALSE)
-
-
+     main = "Histograma de la distribuci?n del promedio para n=100",freq = FALSE)
 
 # ------------------------------------------------------- #
 # Punto 5
 m <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
-xbarra=3334  #Media de decisión
-sigma=400  #Desviación de x
-k=4   #tamaño de muestra
+xbarra=3334  #Media de decisi?n
+sigma=400  #Desviaci?n de x
+k=4   #tama?o de muestra
 Proba=numeric(length(m))
 for (i in 1:length(m)){
   prob=pnorm((xbarra-m[i])/(sigma/sqrt(k)))
@@ -289,7 +410,7 @@ for (i in 1:length(m)){
 }
 
 x11()
-plot(m, Proba, type = "b",pch = 19, ylab = "Probabilidad", main = "Gráfica de probabilidades para distintos valores de m") 
+plot(m, Proba, type = "b",pch = 19, ylab = "Probabilidad", main = "Gr?fica de probabilidades para distintos valores de m") 
 
 
 # ------------------------------------------------------- #
