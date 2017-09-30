@@ -10,3 +10,7 @@
 \contentsline {section}{\numberline {3}Situacion 3}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Punto A.}{8}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Punto B.}{8}{subsection.3.2}
+\contentsline {section}{\numberline {4}Situacion 5}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Punto A.}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Punto B.}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Punto C.}{9}{subsection.4.3}

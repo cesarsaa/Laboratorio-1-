@@ -362,7 +362,27 @@ $E[C]=3\lambda + E[X^2]$
 $E[C]=3\lambda + \lambda + (\lambda)^2$
 $\therefore E[C] = 4\lambda + (\lambda)^2$
 
-
+\section{Situacion 5}
+\subsection{Punto A.}
+~\\ Tenemos la siguiente informacion del problema:
+~\\ $\mu=3800$  $\sigma=400psi$ $n=4$ y $\bar{X}=3334$ el cual es el valor de la media sobre la cual se toma la decision.
+~\\ Para responder a la pregunta sobre el riesgo que corre el proveedor bajo este criterio de decision, decidimos calcular la probabilidad de que $\bar{X}\leq3334$, entonces:
+~\\ Sabemos que $\bar{X}\sim{N(\mu_x,\frac{\sigma}{\sqrt{n}}})$, en este caso $\bar{X}\sim{N(\mu_x=3800,\frac{\sigma=400}{\sqrt{4}}})=(\mu_x=3800,\sigma=200)$
+~\\Entonces:
+~\\ $P(\bar{X}\leq3334)=P(Z\leq\frac{3334-3800}{200})=P(Z\leq\frac{-466}{200})=P(Z\leq-2.33)=0.0099$ (Utilizando la tabla de la normal estandar)
+~\\Segun lo anterior, logramos ver que la probabilidad de que la media sea menor que 3344 es tan solo de 0.99\%, entonces concluimos que el riesgo que corre el proveedor de que el cliente les devuelva un lote bajo esta regla de decision es muy bajo, de hecho, segun los resultados, de cada 100 lotes, solo le devolvera uno aproximadamente. El riesgo lo corre mas bien el comprador, ya que este, con la regla de decision establecida no va a lograr concluir casi nunca que el proceso esta fuera de control cuando en realidad lo esta. Por ultimo, viendolo en forma de errores tipo 1 y 2, concluimos que esta regla de decision cuenta con una probabilidad de cometer error tipo 2 muy alta, es decir, la mayoria de veces va a concluir que el proceso esta bajo control, cuando en realidad esta fuera de control.
+\subsection{Punto B.}
+~\\ Si se cambia la media a $\mu=3700$, la probabilidad que existe de que un lote sea detectado bajo estas condiciones es la siguiente:
+~\\ $P(\bar{X}\leq3334)=P(Z\leq\frac{3334-3700}{200})=P(Z\leq\frac{-366}{200})=P(Z\leq-1.83)=0.0336$ (Utilizando la tabla de la normal estandar)
+~\\ Con lo anterior, podemos observar que la probabilidad de que un lote sea detectado bajo esas condiciones es de 3.36\%, un poco mas alto que en el punto anterior, esto nos dice que entre mas cerca este $\mu$ del valor de la media muestral $\bar{X}$, mas alta va a ser esta probabilidad, y por consiguiente, las posibilidades de que el cliente detecte el lote van a ser mayores.
+\subsection{Punto C.}
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Punto 5.png}
+        \caption{Grafica de probabilidades de detectar el lote segun la media $\mu$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
 % Bibliografia utilizada 
 \bibliography{Bibliografia}
 \end{document}
