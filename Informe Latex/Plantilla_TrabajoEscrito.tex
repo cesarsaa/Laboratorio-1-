@@ -41,7 +41,7 @@
     ~\\{Estimadores}}
 \author{
     {Diana Carolina Arias Sinisterra Cod. 1528008}
- ~\\{Kevin Steven Garcia Chica Cod. 1533173}
+ ~\\{Kevin Steven Chica Garcia Cod. 1533173}
  ~\\{Cesar Andres Saavedra Vanegas Cod. 1628466}}
 
 \date{
@@ -84,174 +84,7 @@
  
 % Desarrollo de los contenidos del documento
 \section{Situacion 1}
-
-Despliegue de una tabla que se llama ``Tabla1'' junto a su n�mero de referencia:
-
-\begin{table}[!h]
-\centering
-\caption{Titulo de la tabla}
-\begin{tabular}{lrr}
-\hline
-{\bf Indicador} &  {\bf $\mathbf{SO_{2}}$} & {\bf Temperatura} \\
-\hline
-  Promedio &     0.006 &     24.093 \\
-
-Desviaci�n est�ndar &     0.007 &       2.950 \\
-
-   Mediana &     0.004 &       23.500 \\
-
-    Minima &    0.000 &       18.200 \\
-
-    M�ximo &     0.127 &         32 \\
-
- Asimetr�a &     5.415 &      0.451 \\
-\hline
-\end{tabular}
-\label{tbl:Descriptivas}  
-\end{table}
-
-Para referenciar una tabla, se utiliza el texto ``ref'' precedido de un \textit{backslash}: as�, se referenciar�a la Tabla \ref{tbl:Descriptivas}.
-\\
-\\
-Despliegue de una imagen que se llama ``Figura1'' junto a su n�mero de referencia:
- 
-\begin{figure}[!h]
-    \begin{center}
-        \includegraphics[width=10cm]{Figuras/Figura1.pdf}
-        \caption{Titulo de la figura}
-        \label{fig:Densidad}
-    \end{center}
-\end{figure}
- 
-Para referenciar una figura, se utiliza el texto ``ref'' precedido de un \textit{backslash}: as�, se referenciar�a la Figura \ref{fig:Densidad}.
-\\
-\\
-Expresi�n matem�tica en l�nea con el texto: $f(x):=ax^2+bx+c$.
-\\
-\\ 
-Representaci�n de una ecuaci�n, sin n�mero de referencia:
- 
-$$y_{i} = \beta_{0} + \beta_{1}x_{i} + \epsilon_{i}$$
- 
-Representaci�n de una ecuaci�n en una l�nea nueva, con n�mero de referencia:
- 
-\begin{equation}
- \bar{X} = \sum_{i=1}^{n}\frac{x_{i}}{n}
- \label{eq:media}
-\end{equation}
- 
-Pare referenciar la ecuaci�n \eqref{eq:media}. Se utiliza la etiqueta ``eqref'' precedido de un \textit{backslash}
-\\
-\\
-Para referenciar una cita bibliogr�ficas se utiliza un archivo ``Bibliografia.bib''. Este contiene la informaci�n de las referencias utilizadas. Por ejemplo para citar dentro del texto: Seg�n \cite{seber2012linear} plantea que el modelo de regresi�n.....
-
-\subsection{}
- 
-$\left(\frac{365}{3}\right) \cdot \left(\frac{365}{4}\right) $
- 
-Una lista: 
- 
-\begin{itemize}
- \item primer �tem de la lista.
- \item segundo �tem de la lista.
-\end{itemize}
- 
-Numeraci�n de una lista:
- 
-\begin{enumerate}
-\item primer �tem de la lista.
-\item segundo �tem de la lista.
-\end{enumerate}
-
-
- 
-Ejemplo para construir una matriz:
- 
-$$I = \left[
-\begin{array}{c c c c c}
-        1    &    0    &    0    &    0    \\
-        0    &    1    &    0    &    0    \\
-        0    &    0    &    1    &    0    \\
-        0    &    0    &    0    &    1
-\end{array} \right]$$
- 
-% Insertar una gran cantidad de comentarios (bloque)
-\begin{comment}
-Este texto, al igual que aquel que est� precedido por un signo de porcentaje, no ser� mostrado en el documento final.
-\end{comment}
-
-\subsection{Scripts R}
-El ambiente \emph{Verbatim} permite agregar codigo de R.
-\begin{verbatim}
-getwd()
-k=70
-cumpledif=1
-p=0
-q=0
-for (j in 1:k){
-  cumpledif=cumpledif*(1-((j-1)/365))
-  q[j]=cumpledif
-  p[j]=1-cumpledif
-  cat(cumpledif,"\n")
-}
-
-windows()
-pdf("Texmaker/Graficos/Punto2.pdf")
-par(mfrow=c(1,3))
-plot(p,col="red", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
-tengan el mismo cumplea�os en funcion 
-     de la cantidad de estudiantes n")
-abline(h=0.5)
-abline(v=23)
-
-plot(q,col="blue", xlab = "n", ylab = "Probabilidad", main = "Probabilidad de que dos o mas estudiantes 
-NO tengan el mismo cumplea�os en funcion 
-     de la cantidad de estudiantes n")
-abline(h=0.5)
-abline(v=23)
-
-plot(p,col="red", xlab = "", ylab = "")
-par(new=TRUE)
-plot(q,col="blue", xlab = "", ylab = "")
-
-title(xlab = "n", ylab = "Probabilidad",main="Probabilidades de que dos o mas estudiantes 
-tengan el mismo cumplea�os (rojo) y su 
-evento complemetario (azul) en funcion de n")
-dev.off()
-
-###########simulacion punto 3a Exponencial
-
-U = runif(1000, 0, 1) #Generar U
-l = 4 #Par�ametro de la exponencial Lambda = 4
-X = -(1/l) * log(U)
-windows()
-pdf("Texmaker/Graficos/Punto3A.pdf")
-par(mfrow=c(1,2))
-plot(density(U),col="blue", xlab = "X", ylab = "Densidad", main = expression(Unif(0,1)))
-plot(density(X),col="red", xlab = "X", ylab = "Densidad", main = expression(Exp(lambda=4)))
-dev.off()
-
-############ Punto 3b Poisson 
-x=0
-for(j in 1:1000){
-  lambda=7
-  i = 0
-  p = exp(-lambda)
-  f = p
-  u= runif(1000,0,1)
-  while(u>=f){
-    p=lambda*p/(i + 1)
-    f = f + p
-    i = i +1
-    x[j] = i
-  } 
-}
-
-\end{verbatim}
-
-
-\subsection{Analisis Resultados}
-\section{Situacion 1}
+\subsection{Estimadores}
 ~\\ Los estimadores propuestos son:
 ~\ $$\hat{\theta_1}=2\bar{X}-1$$
 ~\ $$\hat{\theta_2}=X_{Max}+X_{Min}-1$$
@@ -266,7 +99,7 @@ for(j in 1:1000){
     \end{center}
 \end{figure}
 ~\\ Como podemos observar en la grafica,los estimadores $\hat{\theta_1}$ y $\hat{\theta_2}$ son los que mas se acercan al parametro real $\theta=1200$  con cualquier tama\~{n}o de muestra, aunque el estimador $\hat{\theta_3}$ tambien se acerca pero despues de tama\~{n}o de muestra $n=100$, lo cual nos dice que son mejores los dos anteriores. El estimador $\hat{\theta_4}$ esta muy lejos del parametro real, a simple vista podriamos decir que ese estimador serviria no para estimar $\theta$ en si, si no, para estimar la media de la distribucion en general que es aproximadamente 600.
-\pagebreak \begin{figure}[!h]
+\begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/S.png}
         \caption{Grafica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}
@@ -402,6 +235,28 @@ $E[C]=3\lambda + E[X^2]$
 ~\\Obtenemos que: 
 $E[C]=3\lambda + \lambda + (\lambda)^2$
 ~\\$\therefore E[C] = 4\lambda + (\lambda)^2$
+
+\section{Situacion 4}
+\subsection{Punto A.}
+~\\Se tiene una poblacion que se encuentra definida por una variable aleatoria X con distribucion Exponencial:
+
+$$\ f(x)=5e^{-5x} ; x>0$$
+
+~\\ Para la cual se generaron 1000 muestras aleatorias de tamano n, para la cual se construyenron histogramas con los valores de las medias y se les sobrepuso la curva normal de parametros $\mu$ y $\frac{\sigma}{\sqrt{n}}$. 
+
+~\\ Esta simulacion se realizo por mdio del software R y para n con tamano de muestra de 5, 10, 20, 30, 50, 100.
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=15cm]{figuras/4.jpeg}
+        \caption{Histograma de frecuencias para una funcion Exponencial $\lambda=5$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+~\\En la grafica se puede observar claramente como el comportamiento de una funcion Exponencial va cambiando al aumentar el tamano de muestra n hasta llegar a tener el comportamiento de una funcion normal de de parametros $\mu$ y $\frac{\sigma}{\sqrt{n}}$. 
+\subsection{Punto B.}
+~\\ Para este punto se desea realizar el mismo procedimiento anterior y observar el comportamiento para una distribucion t-Student con 7 grados de libertad.
 
 \section{Situacion 5}
 \subsection{Punto A.}

@@ -1,7 +1,7 @@
 \select@language {spanish}
-\contentsline {figure}{\numberline {1}{\ignorespaces Titulo de la figura}}{3}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Grafica del resultado de la estimacion del parametro real $\theta =1200$}}{6}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Grafica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}}{7}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Grafica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}}{8}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Grafica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}}{9}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Grafica de probabilidades de detectar el lote segun la media $\mu $}}{14}{figure.6}
+\contentsline {figure}{\numberline {1}{\ignorespaces Grafica del resultado de la estimacion del parametro real $\theta =1200$}}{3}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Grafica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}}{4}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Grafica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}}{5}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Grafica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}}{6}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Histograma de frecuencias para una funcion Exponencial $\lambda =5$}}{10}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Grafica de probabilidades de detectar el lote segun la media $\mu $}}{12}{figure.6}
