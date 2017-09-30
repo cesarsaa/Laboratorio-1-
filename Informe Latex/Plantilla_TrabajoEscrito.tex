@@ -251,9 +251,50 @@ for(j in 1:1000){
 
 
 \subsection{Analisis Resultados}
+\section{Situacion 1}
+~\\ Los estimadores propuestos son:
+~\ $$\hat{\theta_1}=2\bar{X}-1$$
+~\ $$\hat{\theta_2}=X_{Max}+X_{Min}-1$$
+~\ $$\hat{\theta_3}=X_{Max}$$
+~\ $$\hat{\theta_4}=Me(X) $$
+~\\ Para evaluar los estimadores anteriores obtuvimos las siguientes cuatro graficas:
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/A.png}
+        \caption{Grafica del resultado de la estimacion del parametro real $\theta=1200$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ Como podemos observar en la grafica,los estimadores $\hat{\theta_1}$ y $\hat{\theta_2}$ son los que mas se acercan al parametro real $\theta=1200$  con cualquier tama\~{n}o de muestra, aunque el estimador $\hat{\theta_3}$ tambien se acerca pero despues de tama\~{n}o de muestra $n=100$, lo cual nos dice que son mejores los dos anteriores. El estimador $\hat{\theta_4}$ esta muy lejos del parametro real, a simple vista podriamos decir que ese estimador serviria no para estimar $\theta$ en si, si no, para estimar la media de la distribucion en general que es aproximadamente 600.
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/S.png}
+        \caption{Grafica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta grafica vemos que al igual que en la anterior, los estimadores $\hat{\theta_1}$ y $\hat{\theta_2}$ son los mejores, ya que tienen un sesgo casi igual a 0 para todos los tama\~{n}os de muestra, aunque vemos tambien que el sesgo del estimador $\hat{\theta_3}$ tambien tiende a 0 a medida que se aumenta los tama\~{n}os de muestra. El estimador $\hat{\theta_4}$ es el menos acertado ya que su sesgo es muy elevado. En general, basandonos en esta grafica, los mejores estimadores hasta ahora son $\hat{\theta_1}$ y $\hat{\theta_2}$
+\pagebreak \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/V.png}
+        \caption{Grafica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta grafica podemos observar que los estimadores $\hat{\theta_2}$ y $\hat{\theta_3}$ tienen menor varianza que los otros dos, pero notemos, que la diferencia de varianzas entre $\hat{\theta_2}$ y $\hat{\theta_3}$ es casi la mitad a favor de $\hat{\theta_3}$ en los tama\~{n}os de muestra mas peque\~{n}os, indicandonos esto, que el estimador de menor varianza es efectivamente $\hat{\theta_3}$.
+\pagebreak \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/ECM.png}
+        \caption{Grafica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En la grafica anterior, notamos que el menor Error cuadratico medio lo presentan los estimadores $\hat{\theta_2}$ y $\hat{\theta_3}$, con casi el mismo en todos los tama\~{n}os de muestra, por esa razon no logramos ver la linea y los puntos que representan el estimador $\hat{\theta_2}$, pero en el tama\~{n}o de muestra n=5 se alcanza a observar una peque\~{n}a porcion del punto rojo que representa el estimador $\hat{\theta_2}$, obstruido por el punto verde que representa el estimador $\hat{\theta_3}$, lo que nos asegura que no hay diferencias significativas entre estos estimadores con respecto al ECM.Entonces, para decidir cual de los dos estimadores es mejor, debemos ver las 4 graficas en conjunto, ya que el ECM no me deja claro esto, por ser tan parecido en ambos.
+
+~\\ En conclusion, tomando en cuenta las 4 graficas, podriamos decir que para tama\~{n}os de muestra menor a 100, $\hat{\theta_2}$ es el mejor estimador para $\theta=1200$ ya que su sesgo es menor que el de $\hat{\theta_3}$, su estimacion es mas cercana al valor real del parametro y ademas su varianza no es muy alta. 
 
 
-\section{Situacion 2}
+\pagebreak \section{Situacion 2}
 \subsection{Punto A.}
 ~\\\textbf{Si $\hat{\theta_1}$ y $\hat{\theta_2}$ son dos estimadores insesgados tales que:
 ~\\$$\hat{\theta_3}=a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}$$}
@@ -375,14 +416,15 @@ $E[C]=3\lambda + \lambda + (\lambda)^2$
 ~\\ Si se cambia la media a $\mu=3700$, la probabilidad que existe de que un lote sea detectado bajo estas condiciones es la siguiente:
 ~\\ $P(\bar{X}\leq3334)=P(Z\leq\frac{3334-3700}{200})=P(Z\leq\frac{-366}{200})=P(Z\leq-1.83)=0.0336$ (Utilizando la tabla de la normal estandar)
 ~\\ Con lo anterior, podemos observar que la probabilidad de que un lote sea detectado bajo esas condiciones es de 3.36\%, un poco mas alto que en el punto anterior, esto nos dice que entre mas cerca este $\mu$ del valor de la media muestral $\bar{X}$, mas alta va a ser esta probabilidad, y por consiguiente, las posibilidades de que el cliente detecte el lote van a ser mayores.
-\subsection{Punto C.}
+\pagebreak \subsection{Punto C.}
 \begin{figure}[!h]
     \begin{center}
-        \includegraphics[width=10cm]{Figuras/Punto 5.png}
+        \includegraphics[width=10cm]{Figuras/5.png}
         \caption{Grafica de probabilidades de detectar el lote segun la media $\mu$}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
+~\\ En esta grafica podemos ver que mientras el valor de la media $\mu$ aumenta, la probabilidad de detectar el lote va disminuyendo, esto pasa, porque la resistencia media con la cual se dice que el proceso de produccion esta bajo control es de 3800 psi, entonces a medida que la media muestral aumenta, nos vamos acercando mas a la media teorica (3800 en este caso), lo que hace menos probable que se devuelva un lote de varillas metalicas, ya que mientras mas cercana sea la media muestral a la poblacional, tenemos mas certeza para concluir que las varillas se estan haciendo con el proceso adecuado o bajo control.
 % Bibliografia utilizada 
 \bibliography{Bibliografia}
 \end{document}
