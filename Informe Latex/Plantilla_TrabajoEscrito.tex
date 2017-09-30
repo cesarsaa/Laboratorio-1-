@@ -41,7 +41,7 @@
     ~\\{Estimadores}}
 \author{
     {Diana Carolina Arias Sinisterra Cod. 1528008}
- ~\\{Kevin Steven Chica Garcia Cod. 1533173}
+ ~\\{Kevin Steven Garcia Chica Cod. 1533173}
  ~\\{Cesar Andres Saavedra Vanegas Cod. 1628466}}
 
 \date{
@@ -236,6 +236,36 @@ $E[C]=3\lambda + E[X^2]$
 $E[C]=3\lambda + \lambda + (\lambda)^2$
 ~\\$\therefore E[C] = 4\lambda + (\lambda)^2$
 
+\subsection{Punto C.}
+~\\ Ahora debemos sugerir un estimador insesgado para $E[C] = 4\lambda + {\lambda}^2$
+~\\ Como $\hat{\lambda}= \frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$ es un estimador insesgado para $\lambda$ , creemos que $4\hat{\lambda}+\hat{\lambda}^2$ es insesgado para $E[C] = 4\lambda + {\lambda}^2$
+~\\ Para ver si eso es correcto, encontraremos la esperanza del estimador propuesto, y con respecto a ese resultado, transformaremos nuestro estimador para que efectivamente nos de insesgado para $E[C] = 4\lambda + {\lambda}^2$, entonces:
+~\\ $$E[4\hat{\lambda}+\hat{\lambda}^2]=E[4\hat{\lambda}]+E[\hat{\lambda}^2]$$
+ $$=4E[\hat{\lambda}]+E[\hat{\lambda}^2]$$
+~\ reemplazando el valor del estimador en $\hat{\lambda}$, nos queda:
+$$=4E[\frac{1}{30}\sum_{i=1}^{30}x_{i}]+E[ \frac{1}{30} \sum_{i=1}^{30}x_{i}]^2$$
+$$=\frac{4}{30}E[\sum_{i=1}^{30}x_{i}]+\frac{1}{900}E[\sum_{i=1}^{30}x_{i}]^2$$ 
+Denotemos $T=\sum_{i=1}^{30}x_{i}$ . Sabemos que xi tiene distribucion Poisson($\lambda$), por tanto T tendra distribucion Poisson($30\lambda$). Entonces, sustituyendo el T en la ecuacion, tendriamos:
+$$=\frac{4}{30}E[T]+\frac{1}{900}E[T]^2$$
+Ahora, si T se distribuye Poisson($30\lambda$), entonces $E[T]=30\lambda$ y $V[T]=30\lambda$.
+Por propiedades tenemos que $V[T]=E[T^2]-E^2[T]$, entonces, sustituyendo y resolviendo, $E[T^2]=30\lambda-900{\lambda}^2$
+Sustituyendo todo en la ecuacion, tenemos lo siguiente:
+$$=\frac{4}{30}(30\lambda)+\frac{1}{900}(30\lambda-900{\lambda}^2)$$ 
+$$=4\lambda+\frac{1}{30}(\lambda-30{\lambda}^2)$$
+$$=4\lambda+\frac{1}{30}\lambda-{\lambda}^2$$
+Entonces, debemos modificar nuestro estimador inicial, para que efectivamente su esperanza nos de $4\lambda + {\lambda}^2$
+~\\ Note que para obtener esa esperanza solo debemos restar $\frac{1}{30}\lambda$ y cambiarle el signo a $-{\lambda}^2$ al resultado de la esperanza
+~\\ Para lograr eso, propusimos el estimador $4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}$
+~\\ Ahora veremos si este nuevo estimador propuesto si es insesgado para $E[C] = 4\lambda + {\lambda}^2$
+$$E[4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}]=E[4\hat{\lambda}]-E[\hat{\lambda}^2]+E[\frac{1}{30}\hat{\lambda}]$$
+$$=4E[\hat{\lambda}]-E[\hat{\lambda}^2]+\frac{1}{30}E[\hat{\lambda}]$$
+Haciendo la misma sustitucion que antes, nos queda:
+$$=\frac{4}{30}E[T]-\frac{1}{900}E[T^2]+\frac{1}{900}E[T]$$
+$$=\frac{4}{30}(30\lambda)-\frac{1}{900}(30\lambda-900{\lambda}^2)+\frac{1}{900}(30\lambda)$$
+$$=4\lambda-\frac{1}{30}(\lambda-30{\lambda}^2)+\frac{1}{30}\lambda$$
+$$=4\lambda-\frac{1}{30}\lambda+{\lambda}^2+\frac{1}{30}\lambda$$
+$$=4\lambda+{\lambda}^2$$
+~\\$\therefore$ \textbf{Un estimador insesgado para} $E[C]=4\lambda+{\lambda}^2$ \textbf{es} $4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}$ \textbf{donde:} $\hat{\lambda}=\frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$
 \section{Situacion 4}
 \subsection{Punto A.}
 ~\\Se tiene una poblacion que se encuentra definida por una variable aleatoria X con distribucion Exponencial:
