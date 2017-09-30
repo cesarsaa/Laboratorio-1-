@@ -400,9 +400,9 @@ hist(Dis.pro6, xlab = expression(bar(X)), ylab = "Frecuencia", col = "grey60",
 # ------------------------------------------------------- #
 # Punto 5
 m <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
-xbarra=3334  #Media de decisi?n
-sigma=400  #Desviaci?n de x
-k=4   #tama?o de muestra
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k=4   #tamaño de muestra
 Proba=numeric(length(m))
 for (i in 1:length(m)){
   prob=pnorm((xbarra-m[i])/(sigma/sqrt(k)))
@@ -410,7 +410,7 @@ for (i in 1:length(m)){
 }
 
 x11()
-plot(m, Proba, type = "b",pch = 19, ylab = "Probabilidad", main = "Gr?fica de probabilidades para distintos valores de m") 
+plot(m, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m", col="black", lty=3, lwd=2) 
 
 
 # ------------------------------------------------------- #
