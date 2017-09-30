@@ -142,20 +142,12 @@ abline(h = 0, lty = 2, lwd = 2, col = 2)
 x <- rexp(500,5)
 media1 <- mean(x)
 sd1 <- sd(x)
-hist(x)
 
 mediaMuestral=function(n){
   muestra=rexp(500,5)
   media=mean(muestra)
   return(media)
 }
-
-mediaMuestral(5)
-mediaMuestral(10)
-mediaMuestral(20)
-mediaMuestral(30)
-mediaMuestral(50)
-mediaMuestral(100)
 
 m=1000
 muchasMedias=replicate(m,mediaMuestral(n))
@@ -169,7 +161,7 @@ para30 <- muchasMedias[1:30]
 para50 <- muchasMedias[1:50]
 para100 <- muchasMedias[1:100]
 
-h <- hist(muchasMedias,xlab="Media muestral", ylab="Frecuencia", col="lightcyan",
+h <- hist(muchasMedias,xlab="Media muestral", ylab="Frecuencia", col="slategray1",
      xlim=c(0.17,0.23),freq=T,
      main="Histograma de las medias muestrales observadas en 1000 muestras de tamaño 500 para una funcion Exponencial de Lambda = 5")
 xfit <- seq(min(x), max(x), length = 1000)
