@@ -9,19 +9,12 @@
 \contentsline {subsection}{\numberline {3.1}Punto A.}{9}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Punto B.}{9}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Punto C.}{10}{subsection.3.3}
-\contentsline {section}{\numberline {4}Situacion 4}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Punto A.}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Punto B.}{11}{subsection.4.2}
-\contentsline {section}{\numberline {5}Situacion 5}{12}{section.5}
-\contentsline {subsection}{\numberline {5.1}Punto A.}{12}{subsection.5.1}
-<<<<<<< HEAD
-\contentsline {subsection}{\numberline {5.2}Punto B.}{13}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Punto C.}{14}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Punto D.}{15}{subsection.5.4}
-\contentsline {section}{\numberline {6}Scripts}{15}{section.6}
-=======
-\contentsline {subsection}{\numberline {5.2}Punto B.}{12}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Punto C.}{13}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Punto D.}{14}{subsection.5.4}
-\contentsline {section}{\numberline {6}Scripts}{14}{section.6}
->>>>>>> acb8bba183a5d362e92ad1cb876c38001d5bfa08
+\contentsline {section}{\numberline {4}Situacion 4}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Punto A.}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Punto B.}{13}{subsection.4.2}
+\contentsline {section}{\numberline {5}Situacion 5}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}Punto A.}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Punto B.}{14}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Punto C.}{15}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Punto D.}{16}{subsection.5.4}
+\contentsline {section}{\numberline {6}Scripts}{17}{section.6}
