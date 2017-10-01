@@ -1,7 +1,9 @@
 # Laboratorio 1 
 # Metodos Estadisticos 
-# Kevin Chica - Diana Arias - Cesar Saavedra 
-
+# Johann Alexis Ospina
+# Diana Arias - 1528008
+# Kevin García - 1533173
+# Cesar Saavedra - 1628466
 
 # ------------------------------------------------------- #
 # Punto 1
