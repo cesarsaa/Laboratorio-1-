@@ -1,9 +1,9 @@
 \select@language {spanish}
-\contentsline {figure}{\numberline {1}{\ignorespaces Grafica del resultado de la estimacion del parametro real $\theta =1200$}}{3}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Grafica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}}{4}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Grafica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}}{5}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Grafica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}}{6}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Histograma de frecuencias para una distribucion Exponencial $\lambda =5$}}{12}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Histograma de frecuencias para una distribucion t-Student con 7 grados de libertad}}{13}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Grafica de probabilidades de detectar el lote segun la media $\mu $}}{15}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Grafica de probabilidades de detectar el lote para k=5 y k=6}}{16}{figure.8}
+\contentsline {figure}{\numberline {1}{\ignorespaces Gr\'{a}fica del resultado de la estimaci\'{o}n del par\'{a}metro real $\theta =1200$}}{3}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Gr\'{a}fica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}}{4}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Gr\'{a}fica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}}{5}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Gr\'{a}fica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}}{6}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Histograma de frecuencias para una distribuci\'{o}n Exponencial $\lambda =5$}}{12}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Histograma de frecuencias para una distribuci\'{o}n t-Student con 7 grados de libertad}}{14}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Gr\'{a}fica de probabilidades de detectar el lote seg\'{u}n la media $\mu $}}{16}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Gr\'{a}fica de probabilidades de detectar el lote para k=5 y k=6}}{17}{figure.8}
